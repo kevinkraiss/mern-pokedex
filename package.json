@@ -1,0 +1,15 @@
+{
+  "name": "mern-pokedex-main",
+  "version": "1.0.0",
+  "description": "A fullstack Mongo/Express/React/Node/GraphQL Pokédex.",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd server && npm i && cd ../client && npm i",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
