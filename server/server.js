@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express')
 const connection = require('./config/connection')
-const { appendFile } = require('fs')
+
 
 const PORT = process.env.PORT || 3001
 const app = express()
@@ -15,4 +15,10 @@ if (process.env.NODE_ENV === 'production') {
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
+})
+
+connection.once('open', async () => {
+    app.listen(PORT, () => {
+        console.log(`Express server listening on http://localhost:${PORT}`)
+    })
 })
